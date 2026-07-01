@@ -8,8 +8,9 @@ export const experience = [
       'Mantenimiento y evolución de HarpERP, un producto ERP con implementación de facturación electrónica Infile.',
       'Creación de módulos nuevos, instancias independientes por cliente y funciones personalizadas a solicitud, sin perder el estándar del producto.',
       'Enfoque en soluciones permanentes en vez de parches temporales, priorizando la correcta resolución de problemas de concurrencia en el sistema.',
+      'Incorporación de Claude Code al flujo de trabajo diario para implementar tecnologías nuevas y construir soluciones automatizadas a procesos complejos.',
     ],
-    stack: ['PHP', 'Bootstrap', 'jQuery', 'FPDF', 'PHPExcel', 'API REST', 'SSH'],
+    stack: ['PHP', 'Bootstrap', 'jQuery', 'FPDF', 'PHPExcel', 'API REST', 'SSH', 'Claude Code'],
   },
   {
     company: 'Al Chilazo, S.A.',

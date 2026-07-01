@@ -1,14 +1,33 @@
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { useTypewriter } from '../hooks/useTypewriter'
 
 const POSITIONS = ['Desarrollador Web', 'Software Developer', 'Desarrollador Full Stack']
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15, delayChildren: 0.1 },
+  },
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+}
+
+const photoVariants = {
+  hidden: { opacity: 0, scale: 0.85 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.7, ease: 'easeOut' } },
+}
+
 export default function Hero() {
   const typed = useTypewriter(POSITIONS)
+  const shouldReduceMotion = useReducedMotion()
 
   return (
     <section
-      id="about"
+      id="home"
       className="d-flex align-items-center"
       style={{ minHeight: '100vh', paddingTop: '6rem' }}
     >
@@ -16,24 +35,32 @@ export default function Hero() {
         <div className="row align-items-center g-5">
           <motion.div
             className="col-lg-7"
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
+            variants={containerVariants}
+            initial={shouldReduceMotion ? 'visible' : 'hidden'}
+            animate="visible"
           >
-            <p className="text-accent fw-semibold mb-2">Hola, soy</p>
-            <h1 className="display-4 fw-bold mb-2">Eduardo Lemus</h1>
-            <h2 className="h4 text-muted-soft mb-4" style={{ minHeight: '2rem' }}>
+            <motion.p variants={itemVariants} className="text-accent fw-semibold mb-2">
+              Hola, soy
+            </motion.p>
+            <motion.h1 variants={itemVariants} className="display-4 fw-bold mb-2">
+              Eduardo Lemus
+            </motion.h1>
+            <motion.h2
+              variants={itemVariants}
+              className="h4 text-muted-soft mb-4"
+              style={{ minHeight: '2rem' }}
+            >
               {typed}
               <span className="text-accent">|</span>
-            </h2>
-            <p className="lead text-muted-soft mb-4">
+            </motion.h2>
+            <motion.p variants={itemVariants} className="lead text-muted-soft mb-4">
               Desarrollador de Software Full Stack con más de 5 años de experiencia entre
               soporte técnico, análisis de TI y desarrollo web. Especializado en
               mantenimiento y evolución de sistemas ERP en producción, automatización de
               reportes e infraestructura en AWS/Linux. Enfocado en construir soluciones
               permanentes y escalables — no parches temporales.
-            </p>
-            <div className="d-flex gap-3 flex-wrap">
+            </motion.p>
+            <motion.div variants={itemVariants} className="d-flex gap-3 flex-wrap">
               <a
                 href="/file/CV-dev0103_compressed.pdf"
                 target="_blank"
@@ -51,13 +78,13 @@ export default function Hero() {
               >
                 Contactar por WhatsApp
               </a>
-            </div>
+            </motion.div>
           </motion.div>
           <motion.div
             className="col-lg-5 text-center"
-            initial={{ opacity: 0, scale: 0.85 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.15 }}
+            variants={photoVariants}
+            initial={shouldReduceMotion ? 'visible' : 'hidden'}
+            animate="visible"
           >
             <img
               src="/images/presentation.jpeg"

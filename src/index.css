@@ -23,10 +23,12 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
+  overflow-x: hidden;
   font-family: var(--font-body);
   background-color: var(--bg-page);
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -101,6 +103,19 @@ h2.section-title::after {
 
 .site-navbar .nav-link:hover {
   color: var(--accent);
+}
+
+.theme-toggle-fixed {
+  position: fixed;
+  top: 0.9rem;
+  right: 1rem;
+  z-index: 1040;
+}
+
+@media (max-width: 991.98px) {
+  .site-navbar .container {
+    padding-right: 4rem;
+  }
 }
 
 /* Tech carousel */
