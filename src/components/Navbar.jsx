@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { useTheme } from '../hooks/useTheme'
-import ThemeToggle from './ThemeToggle'
 
 const LINKS = [
-  { href: '#about', label: 'Acerca de mí' },
+  { href: '#home', label: 'Inicio' },
+  { href: '#profile', label: 'Quién soy' },
   { href: '#technologies', label: 'Tecnologías' },
   { href: '#experience', label: 'Experiencia' },
   { href: '#education', label: 'Educación' },
@@ -12,7 +11,6 @@ const LINKS = [
 ]
 
 export default function Navbar() {
-  const { theme, toggleTheme } = useTheme()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -28,10 +26,10 @@ export default function Navbar() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className={`site-navbar fixed-top ${scrolled ? 'scrolled' : ''}`}
+      className={`navbar site-navbar fixed-top ${scrolled ? 'scrolled' : ''}`}
     >
       <div className="container d-flex align-items-center justify-content-between flex-wrap">
-        <a className="fs-4 fw-bold text-accent text-decoration-none" href="#about">
+        <a className="fs-4 fw-bold text-accent text-decoration-none" href="#home">
           Eduardo Lemus
         </a>
         <button
@@ -54,7 +52,6 @@ export default function Navbar() {
             ))}
           </ul>
         </nav>
-        <ThemeToggle theme={theme} onToggle={toggleTheme} />
       </div>
     </motion.header>
   )
