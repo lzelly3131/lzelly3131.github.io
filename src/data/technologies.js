@@ -15,9 +15,11 @@ import {
   SiLinux,
   SiMysql,
   SiPostman,
+  SiClaudecode,
 } from 'react-icons/si'
 import { FaCss3Alt, FaAws } from 'react-icons/fa6'
 import { VscVscode } from 'react-icons/vsc'
+import { RiOpenaiFill } from 'react-icons/ri'
 
 export const technologies = [
   { name: 'PHP', Icon: SiPhp },
@@ -39,4 +41,6 @@ export const technologies = [
   { name: 'MySQL', Icon: SiMysql },
   { name: 'Postman', Icon: SiPostman },
   { name: 'VS Code', Icon: VscVscode },
+  { name: 'OpenAI Codex', Icon: RiOpenaiFill },
+  { name: 'Claude Code', Icon: SiClaudecode },
 ]
