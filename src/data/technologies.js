@@ -1,0 +1,42 @@
+import {
+  SiPhp,
+  SiJavascript,
+  SiJquery,
+  SiBootstrap,
+  SiHtml5,
+  SiReact,
+  SiVuedotjs,
+  SiAngular,
+  SiIonic,
+  SiNodedotjs,
+  SiExpress,
+  SiDocker,
+  SiGit,
+  SiLinux,
+  SiMysql,
+  SiPostman,
+} from 'react-icons/si'
+import { FaCss3Alt, FaAws } from 'react-icons/fa6'
+import { VscVscode } from 'react-icons/vsc'
+
+export const technologies = [
+  { name: 'PHP', Icon: SiPhp },
+  { name: 'JavaScript', Icon: SiJavascript },
+  { name: 'jQuery', Icon: SiJquery },
+  { name: 'Bootstrap', Icon: SiBootstrap },
+  { name: 'HTML5', Icon: SiHtml5 },
+  { name: 'CSS3', Icon: FaCss3Alt },
+  { name: 'React', Icon: SiReact },
+  { name: 'Vue.js', Icon: SiVuedotjs },
+  { name: 'Angular', Icon: SiAngular },
+  { name: 'Ionic', Icon: SiIonic },
+  { name: 'Node.js', Icon: SiNodedotjs },
+  { name: 'Express', Icon: SiExpress },
+  { name: 'Docker', Icon: SiDocker },
+  { name: 'Git', Icon: SiGit },
+  { name: 'AWS', Icon: FaAws },
+  { name: 'Linux', Icon: SiLinux },
+  { name: 'MySQL', Icon: SiMysql },
+  { name: 'Postman', Icon: SiPostman },
+  { name: 'VS Code', Icon: VscVscode },
+]
