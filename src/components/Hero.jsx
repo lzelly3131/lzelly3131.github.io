@@ -62,7 +62,7 @@ export default function Hero() {
             </motion.p>
             <motion.div variants={itemVariants} className="d-flex gap-3 flex-wrap">
               <a
-                href="/file/CV-dev0103_compressed.pdf"
+                href="/file/CV_Eduardo_Lemus.pdf"
                 target="_blank"
                 rel="noreferrer"
                 className="btn btn-lg text-white"
